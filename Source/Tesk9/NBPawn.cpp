@@ -1,4 +1,4 @@
-
+﻿
 #include "NBPawn.h"
 #include "Tesk9.h"
 

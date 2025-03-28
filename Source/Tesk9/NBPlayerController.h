@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
@@ -17,13 +17,13 @@ class TESK9_API ANBPlayerController : public APlayerController
 public:
 	ANBPlayerController();
 	virtual void BeginPlay() override;
-	//Ã¤ÆÃ ¸Ş½ÃÁö ¼³Á¤(°ü¸®)
+	//ì±„íŒ… ë©”ì‹œì§€ ì„¤ì •(ê´€ë¦¬)
 	void SetChatMessageString(const FString& InChatMessageString);
 
-	//Ã¤ÆÃ ¸Ş½ÃÁö Ãâ·Â
+	//ì±„íŒ… ë©”ì‹œì§€ ì¶œë ¥
 	void PrintChatMessageString(const FString& InChatMessageString);
 
-	//¸ÖÆ¼ÇÃ·¹ÀÌ Ã¤ÆÃ
+	//ë©€í‹°í”Œë ˆì´ ì±„íŒ…
 	UFUNCTION(Client, Reliable)
 	void ClientRPCPrintChatMessageString(const FString& InChatMessageString);
 	UFUNCTION(Server, Reliable)
@@ -33,7 +33,7 @@ public:
 
 
 protected:
-	//Ã¤ÆÃ À§Á¬ ¿¬°á 
+	//ì±„íŒ… ìœ„ì ¯ ì—°ê²° 
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UNBChatInput> ChatInputWidgetClass;
 	UPROPERTY()
@@ -41,7 +41,7 @@ protected:
 
 	FString ChatMessageString;
 
-	//°øÁö À§Á¬ ¿¬°á
+	//ê³µì§€ ìœ„ì ¯ ì—°ê²°
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UUserWidget> NotificationTextWidgetClass;
 

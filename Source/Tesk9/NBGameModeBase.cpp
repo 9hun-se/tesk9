@@ -1,4 +1,4 @@
-#include "NBGameModeBase.h"
+ï»¿#include "NBGameModeBase.h"
 #include "NBGameStateBase.h"
 #include <random>
 #include "NBPlayerController.h"
@@ -15,9 +15,9 @@ void ANBGameModeBase::OnPostLogin(AController* NewPlayer)
 	if (IsValid(NBPlayerController) == true)
 	{
 		ArrayOfPlayerControllers.Add(NBPlayerController);
-		//ÀüÃ¼ ÇÃ·¹ÀÌ¾î ¹è¿­¿¡ »õÇÃ·¹ÀÌ¾î Ãß°¡+³Ñ¹ö¸µ
+		//ì „ì²´ í”Œë ˆì´ì–´ ë°°ì—´ì— ìƒˆí”Œë ˆì´ì–´ ì¶”ê°€+ë„˜ë²„ë§
 		ANBPlayerState* NBPS = NBPlayerController->GetPlayerState<ANBPlayerState>();
-		//°øÁöÀ§Á¬ Ãâ·Â
+		//ê³µì§€ìœ„ì ¯ ì¶œë ¥
 		NBPlayerController->NotificationText = FText::FromString(TEXT("Connected to the game server."));
 
 		if (IsValid(NBPS) == true)
@@ -41,9 +41,9 @@ FString ANBGameModeBase::GenerateRandomNumber()
 		int32 i = FMath::RandRange(1, 9);
 		Numbers.Add(i);
 	}
-	//¹ÝÈ¯ °á°ú
+	//ë°˜í™˜ ê²°ê³¼
 	FString Result;
-	//»ý¼ºµÈ ¼ýÀÚ
+	//ìƒì„±ëœ ìˆ«ìž
 	int32 Gnum = 0;
 	if (Numbers.Num() == 3)
 	{
@@ -56,15 +56,15 @@ FString ANBGameModeBase::GenerateRandomNumber()
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("¼¼ °³ÀÇ °íÀ¯ÇÑ ¼ýÀÚ¸¦ »ý¼ºÇÏÁö ¸øÇß½À´Ï´Ù."));
+		UE_LOG(LogTemp, Warning, TEXT("ì„¸ ê°œì˜ ê³ ìœ í•œ ìˆ«ìžë¥¼ ìƒì„±í•˜ì§€ ëª»í–ˆìŠµë‹ˆë‹¤."));
 	}
 
 	
-	UE_LOG(LogTemp, Log, TEXT("»ý¼ºµÈ ¼¼ ÀÚ¸® ¼ýÀÚ:%d"),Gnum);
+	UE_LOG(LogTemp, Log, TEXT("ìƒì„±ëœ ì„¸ ìžë¦¬ ìˆ«ìž:%d"),Gnum);
 
 	return Result;
 }
-//¼¼ÀÚ¸®¼öÀÎÁö ÆÇº°
+//ì„¸ìžë¦¬ìˆ˜ì¸ì§€ íŒë³„
 bool ANBGameModeBase::IsGuessNumberString(const FString& InNumberString)
 {
 	bool bCanPlay = false;
@@ -100,7 +100,7 @@ bool ANBGameModeBase::IsGuessNumberString(const FString& InNumberString)
 
 	return bCanPlay;
 }
-//°á°ú ÆÇÁ¤
+//ê²°ê³¼ íŒì •
 FString ANBGameModeBase::JudgeResult(const FString& InSecretNumberString, const FString& InGuessNumberString)
 {
 	int32 StrikeCount = 0, BallCount = 0;
@@ -169,7 +169,7 @@ void ANBGameModeBase::PrintChatMessageString(ANBPlayerController* InChattingPlay
 		}
 	}
 }
-//»ç¿ëÇÑ µµÀü È½¼ö
+//ì‚¬ìš©í•œ ë„ì „ íšŸìˆ˜
 void ANBGameModeBase::IncreaseChance(ANBPlayerController* InChattingPlayerController)
 {
 	ANBPlayerState* NBPS = InChattingPlayerController->GetPlayerState<ANBPlayerState>();
@@ -178,7 +178,7 @@ void ANBGameModeBase::IncreaseChance(ANBPlayerController* InChattingPlayerContro
 		NBPS->LostChance++;
 	}
 }
-//°ÔÀÓ ÃÊ±âÈ­
+//ê²Œìž„ ì´ˆê¸°í™”
 void ANBGameModeBase::ResetGame()
 {
 	SecretNumberString = GenerateRandomNumber();

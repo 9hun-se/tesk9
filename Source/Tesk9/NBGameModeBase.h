@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
@@ -14,28 +14,28 @@ class TESK9_API ANBGameModeBase : public AGameModeBase
 public:
 	virtual void OnPostLogin(AController* NewPlayer) override;
 
-	//³­¼ö »ı¼º
+	//ë‚œìˆ˜ ìƒì„±
 	UFUNCTION(BlueprintCallable)
 	FString GenerateRandomNumber();
 
 	bool IsGuessNumberString(const FString& InNumberString);
-	//°á°ú ÆÇÁ¤
+	//ê²°ê³¼ íŒì •
 	FString JudgeResult(const FString& InSecretNumberString, const FString& InGuessNumberString);
 
 	virtual void BeginPlay() override;
 
 	void PrintChatMessageString(ANBPlayerController* InChattingPlayerController, const FString& InChatMessageString);
-	//½Ãµµ È½¼ö Áõ°¡
+	//ì‹œë„ íšŸìˆ˜ ì¦ê°€
 	void IncreaseChance(ANBPlayerController* InChattingPlayerController);
-	//°ÔÀÓ ÃÊ±âÈ­
+	//ê²Œì„ ì´ˆê¸°í™”
 	void ResetGame();
-	//½ÂÆĞ ÆÇÁ¤
+	//ìŠ¹íŒ¨ íŒì •
 	void JudgeGame(ANBPlayerController* InChattingPlayerController, int InStrikeCount);
 
 protected:
-	//·£´ı ³­¼ö
+	//ëœë¤ ë‚œìˆ˜
 	FString SecretNumberString;
-	//ÀüÃ¼ ÇÃ·¹ÀÌ¾î ¹è¿­
+	//ì „ì²´ í”Œë ˆì´ì–´ ë°°ì—´
 	TArray<TObjectPtr<ANBPlayerController>> ArrayOfPlayerControllers;
 
 

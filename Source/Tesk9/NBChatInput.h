@@ -1,4 +1,4 @@
-
+ï»¿
 #pragma once
 
 #include "CoreMinimal.h"
@@ -18,7 +18,7 @@ public:
 	virtual void NativeDestruct() override;
 
 protected:
-	//Ã¤ÆÃÀÔ·Â
+	//ì±„íŒ…ìž…ë ¥
 	UFUNCTION()
 	void OnChatInputTextCommitted(const FText& Text, ETextCommit::Type CommitMethod);
 

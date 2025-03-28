@@ -1,4 +1,4 @@
-
+ï»¿
 #include "NBPlayerState.h"
 #include "Net/UnrealNetwork.h"
 
@@ -19,7 +19,7 @@ void ANBPlayerState::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>&
 	DOREPLIFETIME(ThisClass, LostChance);
 	DOREPLIFETIME(ThisClass, MaxChance);
 }
-//³²Àº ½Ãµµ È½¼ö Ãß°¡ÇØ¼­ ¹®ÀÚ¿­È­
+//ë‚¨ì€ ì‹œë„ íšŸìˆ˜ ì¶”ê°€í•´ì„œ ë¬¸ìì—´í™”
 FString ANBPlayerState::GetPlayerInfoString()
 {
 	FString PlayerInfoString = PlayerNameString + TEXT("(") + FString::FromInt(LostChance) + TEXT("/") + FString::FromInt(MaxChance) + TEXT(")");

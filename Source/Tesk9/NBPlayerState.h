@@ -1,4 +1,4 @@
-
+ï»¿
 #pragma once
 
 #include "CoreMinimal.h"
@@ -17,13 +17,13 @@ public:
 	virtual void GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const override;
 
 public:
-	//ÇÃ·¹ÀÌ¾î+¹øÈ£
+	//í”Œë ˆì´ì–´+ë²ˆí˜¸
 	UPROPERTY(Replicated)
 	FString PlayerNameString;
-	//ÇöÀç ½Ãµµ È½¼ö
+	//í˜„ì¬ ì‹œë„ íšŸìˆ˜
 	UPROPERTY(Replicated, BlueprintReadOnly)
 	int32 LostChance;
-	//ÃÖ´ë ½Ãµµ È½¼ö
+	//ìµœëŒ€ ì‹œë„ íšŸìˆ˜
 	UPROPERTY(Replicated)
 	int32 MaxChance;
 	

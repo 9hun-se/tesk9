@@ -1,4 +1,4 @@
-#include "NBPlayerController.h"
+ï»¿#include "NBPlayerController.h"
 #include "NBChatInput.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Tesk9.h"
@@ -81,7 +81,7 @@ void ANBPlayerController::ServerRPCPrintChatMessageString_Implementation(const F
 	}
 }
 
-//°øÁö À§Á¬ ¶óÀÌÇÁÅ¸ÀÓ ÇÔ¼ö
+//ê³µì§€ ìœ„ì ¯ ë¼ì´í”„íƒ€ì„ í•¨ìˆ˜
 void ANBPlayerController::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
