@@ -19,9 +19,9 @@ void ANBPlayerState::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>&
 	DOREPLIFETIME(ThisClass, LostChance);
 	DOREPLIFETIME(ThisClass, MaxChance);
 }
-//남은 시도 횟수 추가해서 문자열화
+//현재 시행한 시도 횟수 추가해서 문자열화
 FString ANBPlayerState::GetPlayerInfoString()
 {
-	FString PlayerInfoString = PlayerNameString + TEXT("(") + FString::FromInt(LostChance) + TEXT("/") + FString::FromInt(MaxChance) + TEXT(")");
+	FString PlayerInfoString = PlayerNameString + TEXT("(") + FString::FromInt(LostChance+1) + TEXT("/") + FString::FromInt(MaxChance) + TEXT(")");
 	return PlayerInfoString;
 }
